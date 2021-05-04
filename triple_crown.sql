@@ -20,3 +20,21 @@ VALUES
 ('2007', 'Street Sense', 'Curlin', 'Rags to Riches'),
 ('2006', 'Barbaro', 'Bernardini', 'Jazil'),
 ('2015', 'American Pharoah', 'American Pharoah', 'American Pharoah');
+
+CREATE VIEW Derby AS
+SELECT
+year,
+derbywinner as winner
+FROM Winner;
+
+CREATE VIEW Preakness AS
+SELECT
+year,
+preakwinner as winner
+FROM Winner;
+
+CREATE VIEW Belmont AS
+SELECT
+year,
+belmontwinner as winner
+FROM Winner;
