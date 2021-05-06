@@ -38,3 +38,9 @@ SELECT
 year,
 belmontwinner as winner
 FROM Winner;
+
+SELECT year FROM Derby d WHERE d.winner NOT IN (SELECT p.winner FROM Preakness p WHERE p.winner NOT IN (SELECT b.winner FROM Belmont b WHERE b.winner NOT IN (SELECT d.winner FROM Derby d)));
+
+SELECT year, d.winner FROM Derby d WHERE d.winner in (SELECT p.winner FROM Preakness p WHERE p.winner NOT IN (SELECT b.winner FROM Belmont b));
+
+SELECT year, d.winner FROM Derby d WHERE d.winner in (SELECT p.winner FROM Preakness p WHERE p.winner in (SELECT b.Winner FROM Belmont b));
